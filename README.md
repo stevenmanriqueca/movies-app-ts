@@ -27,4 +27,4 @@ yarn dev
 
 ## demo
 
-Click [here](https://stevenmanriqueca.github.io/movies-app-ts/) view demo.
+Click [here](https://movies-app-ts.vercel.app/) view demo.
