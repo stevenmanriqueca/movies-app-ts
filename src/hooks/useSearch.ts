@@ -44,9 +44,10 @@ export const useSearch = ({ searchParam, initPage }: IProps) => {
     };
     if (value !== "") {
       fetchMoviesByQuery();
-      setLoading(false);
       window.scroll({ top: 0, behavior: "smooth" });
     }
+
+      setLoading(false);
   }, [value, pageCurrent]);
 
   const handleChangePage = (_: ChangeEvent, value: number) => {

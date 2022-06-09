@@ -1,9 +1,16 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { NavBar } from "../components/navbar";
 import { MenuDrawer } from "../components/sidebar";
 import { BackDrop } from "../components/ui";
 import { useFetchGenres } from "../hooks/useFetchGenres";
-import { GenresPage, HomePage, SearchPage, TrendingPage, TvPage, TypePage } from "../pages";
+import {
+  GenresPage,
+  HomePage,
+  SearchPage,
+  TrendingPage,
+  TvPage,
+  TypePage,
+} from "../pages";
 
 export const AppRouter = (): JSX.Element => {
   const { loading } = useFetchGenres();
@@ -12,7 +19,7 @@ export const AppRouter = (): JSX.Element => {
       {loading === true ? (
         <BackDrop />
       ) : (
-        <BrowserRouter>
+        <HashRouter>
           <NavBar />
           <MenuDrawer />
           <Routes>
@@ -27,7 +34,7 @@ export const AppRouter = (): JSX.Element => {
               element={<Navigate to={"/movies/home"} replace />}
             />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       )}
     </>
   );
