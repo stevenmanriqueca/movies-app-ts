@@ -28,7 +28,7 @@ const SearchPage = (): JSX.Element => {
   return (
     <>
       <Box sx={{ ...StylesContainerPage }}>
-        <Typography variant="h1" align="center" color="primary" sx={{ p: 4 }}>
+        <Typography variant="h2" align="center" color="primary" sx={{ p: 4 }}>
           Search Movie
         </Typography>
         <StyledInput
