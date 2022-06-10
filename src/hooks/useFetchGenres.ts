@@ -6,24 +6,13 @@ export const useFetchGenres = () => {
   const [loading, setLoading] = useState(true);
   const [genres, setGenres] = useState<Genre[]>([]);
 
-  const existLocalStorage = JSON.parse(
-    localStorage.getItem("genresList") || "[]"
-  );
-
   useEffect(() => {
     const callGenres = async () => {
       await getGenres().then(setGenres);
       setLoading(false);
     };
-    if (existLocalStorage.length > 1) {
-      const genresData = JSON.parse(localStorage.getItem("genresList") || "[]");
-      setGenres(genresData);
-      setLoading(false);
-    }
-    if (existLocalStorage.length === 0) {
-      callGenres();
-      localStorage.setItem("genresList", JSON.stringify(genres));
-    }
+    callGenres();
+    localStorage.setItem("genresList", JSON.stringify(genres));
   }, []);
 
   if (genres) {

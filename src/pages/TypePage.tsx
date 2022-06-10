@@ -9,7 +9,9 @@ import { GridContainer, StylesContainerPage } from "../styles/components";
 const TypePage = (): JSX.Element => {
   const { pathname, search } = useLocation();
   const url = `https://api.themoviedb.org/3/movie/${
-    pathname === "Top" ? "top_rated" : pathname.slice(14).toLowerCase()
+    pathname === "/movies/types/Top"
+      ? "top_rated"
+      : pathname.slice(14).toLowerCase()
   }?api_key=${import.meta.env.VITE_APP_API_KEY}`;
   const { page = 1 } = queryString.parse(search);
   const { error, results, loading, handleChange, pageCurrent } =

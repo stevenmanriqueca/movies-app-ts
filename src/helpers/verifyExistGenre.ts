@@ -4,7 +4,7 @@ interface genres {
 }
 
 export const verifyExistGenre = (pathname: string): genres[] => {
-	const genreName = pathname.slice(15);
+	const genreName = pathname.slice(15).replace(/%20/gi, " ")
 	const allGenres: genres[] = JSON.parse(
 		localStorage.getItem("genresList") || "[]"
 	);
