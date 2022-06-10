@@ -16,7 +16,7 @@ const GenresPage = (): JSX.Element => {
   const { page = 1 } = queryString.parse(search);
   const url = `https:api.themoviedb.org/3/discover/movie?with_genres=${
     result[0].id
-  }&api_key=${import.meta.env.VITE_APP_API_KEY}2`;
+  }&api_key=${import.meta.env.VITE_APP_API_KEY}`;
 
   const { error, results, loading, handleChange, pageCurrent } =
     useFetchAndPagination({
