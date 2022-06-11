@@ -1,6 +1,6 @@
 # Movies App
 
-Hello community, this app Hello community, this application was created with [vite](https://vitejs.dev), the application uses:
+Hello community, this application was created with [vite](https://vitejs.dev), the application uses:
 
 - React 18
 - Responsive Design
